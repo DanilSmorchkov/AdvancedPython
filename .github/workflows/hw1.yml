@@ -29,7 +29,7 @@ jobs:
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
           
       - name: Install dependencies
-        run: uv pip install --locked .
+        run: uv sync --all-extras --dev
 
       - name: Test nl
         run: uv run pytest homework_1/tests/test_nl
