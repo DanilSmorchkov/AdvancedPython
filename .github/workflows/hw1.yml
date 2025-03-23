@@ -2,11 +2,11 @@ name: Homework 1 Tests
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - 'homework_1/**'
   pull_request:
-    branches: [main]
+    branches: [master]
     paths:
       - 'homework_1/**'
 
