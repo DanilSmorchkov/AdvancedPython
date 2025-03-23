@@ -1,0 +1,41 @@
+name: Homework 1 Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'homework_1/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'homework_1/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      HOMEWORK: homework_1
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          
+      - name: Install UV
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+          
+      - name: Install dependencies
+        run: uv pip install --locked .
+
+      - name: Test nl
+        run: uv run pytest homework_1/tests/test_nl
+
+      - name: Test tail
+        run: uv run pytest homework_1/tests/test_tail
+
+      - name: Test wc
+        run: uv run pytest homework_1/tests/test_wc
