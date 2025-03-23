@@ -32,10 +32,10 @@ jobs:
         run: uv sync --all-extras --dev
 
       - name: Test nl
-        run: uv run pytest homework_1/tests/test_nl
+        run: uv run pytest homework_1/tests/test_nl.py
 
       - name: Test tail
-        run: uv run pytest homework_1/tests/test_tail
+        run: uv run pytest homework_1/tests/test_tail.py
 
       - name: Test wc
-        run: uv run pytest homework_1/tests/test_wc
+        run: uv run pytest homework_1/tests/test_wc.py
