@@ -13,8 +13,10 @@ def tail(files):
         click.echo("".join(output), nl=False)
     else:
         for idx, filename in enumerate(files):
+
             if len(files) > 1:
                 click.echo(f"==> {filename} <==")
+
             try:
                 with open(filename, "r") as f:
                     lines = f.readlines()
@@ -26,7 +28,6 @@ def tail(files):
                     f"tail: Cannot open '{filename}' for reading: {e.strerror}",
                     err=True,
                 )
-                continue
 
 
 if __name__ == "__main__":
