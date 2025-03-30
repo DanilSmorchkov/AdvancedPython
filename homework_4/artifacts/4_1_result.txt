@@ -1,0 +1,3 @@
+Synchronous execution (10 runs): 22.10 sec
+Threads (10 threads): 22.21 sec
+Processes (10 processes): 3.12 sec
